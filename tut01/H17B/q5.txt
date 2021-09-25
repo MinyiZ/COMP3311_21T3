@@ -1,0 +1,78 @@
+Consider some typical operations in the myUNSW system ...
+
+- student enrols in a lab class
+- student enrols in a course
+- system prints a student transcript
+
+For each of these operations:
+
+- identify what data items are required
+- consider relationships between these data items
+- consider constraints on the data and relationships
+
+=================================================================
+
+student enrols in a lab class
+--------------------------------
+Data Items
+----------
+student(zid, name, ....)
+class(day, time, location, limit, ...)
+course(code, ....)
+room(name, address, ...)
+
+Relationships
+--------------
+student is enrolled in class
+student is enrolled in course
+class is part of a course
+class is held in a room
+
+Constraints
+-----------
+class has to be held in a room
+student can only enrol in one class
+student cannot enrol in more than 3 class
+student cannot enrol in same course twice
+student cannot enrol in a full class/course
+student cannot ennrol if time clashes
+student cannot enrol in class if not enrolled in course
+student cannot entrol in more than 1 class
+prereqs not met
+
+system prints a student transcript
+-----------------------------------
+Data Items
+----------
+student(zid, ...)
+course(code, ....)
+grades(student, course, grade, ....)
+
+Relationships
+--------------
+student has grades for a course
+course allocates grades
+student enrolled in a course
+
+Constraints
+-----------
+student can only have one grade per course
+grades are 0-100
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
