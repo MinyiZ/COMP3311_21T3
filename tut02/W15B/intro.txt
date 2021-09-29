@@ -1,0 +1,21 @@
+
+COMP3311 W3 Tutorial
+===========================================================
+
+Notices
+-------
+
+- Assignment 1 partially released
+    - get familiar with schema
+    - try the easier questions
+- set up your Postgres Server on CSE servers ASAP!!
+    - ask me after class if any issues
+- Quiz 2 due on Friday
+    - 9PM not midnight!!
+
+
+Today
+------
+ER -> relational
+ER -> SQL
+Prac Exercise 03
