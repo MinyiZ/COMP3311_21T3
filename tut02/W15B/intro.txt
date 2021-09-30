@@ -1,21 +1,59 @@
-
-COMP3311 W3 Tutorial
+COMP3311 W2 Tutorial
 ===========================================================
 
-Notices
+Me:     Min
+Email:  minyi.zhong@unsw.edu.au
+
+
+Course Content
 -------
+Pre-recorded lectures
+Live lectures (problem-solving sessions)
+Tutorials
+    - on Blackboard Collaborate
+    - recorded
+    - mix between tute questions and prac
+        - tute: 1hr
+        - prac: 30min
+        - will adjust as required
+    - what we do
+        - https://github.com/MinyiZ/COMP3311_21T3
+Tute Excercises
+    - a lot lot lot of them
+    - answers will be released
+Prac Exercises
+    - not compulsory but very helpful
+    - answers will be released
 
-- Assignment 1 partially released
-    - get familiar with schema
-    - try the easier questions
-- set up your Postgres Server on CSE servers ASAP!!
-    - ask me after class if any issues
-- Quiz 2 due on Friday
-    - 9PM not midnight!!
+Other Knowledge
+----------------
+Regular Expressions (regex)
+    - will be taught as we go along
+    - any quick regex Youtube tutorial should be enough
+Python
+    - nothing crazy complicated
+    - functions
+    - string manipulations
 
+
+Assessments
+---------------
+Quizzes
+Assignment 1
+Assignment 2
+Exam
+
+
+Need help?
+-----------
+Forum (Discourse)
+Me
+jas
 
 Today
-------
-ER -> relational
-ER -> SQL
-Prac Exercise 03
+-----
+Q5          - identifying data, relationships and constraints
+Q6          - interpreting an ER diagram
+Q7          - simple ER diagram
+Q10 - 15    - more ER diagram practice
+prac        - installing Postgres
