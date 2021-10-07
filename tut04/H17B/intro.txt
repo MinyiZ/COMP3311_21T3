@@ -1,0 +1,29 @@
+
+COMP3311 W4 Tutorial
+===========================================================
+
+Notices
+-------
+
+- Ass1 due next Friday
+- Quiz 3 due this Friday
+
+Assignment 1 Tips
+------------------
+
+- use helper views to simplify queries
+- DROP VIEW usually helps with any create view errors
+- GROUP BY id, name if you want name in the select statement
+- string_agg() is great
+    - https://www.postgresqltutorial.com/postgresql-aggregate-functions/postgresql-string_agg-function/
+- return next is also great
+- don't use LIMIT 1
+- double check collab beers behaviour for Q10-12
+
+Today
+------
+SQL update statements
+SQL constraints
+SQL delete semantics
+SQL queries
+PLpgSQL functions

@@ -1,8 +1,8 @@
 -- Q2
 
--- update Employees
--- set salary = salary * 0.8
--- where age < 25;
+update Employees
+set salary = salary * 0.8
+where age < 25;
 
 -- Q3
 
