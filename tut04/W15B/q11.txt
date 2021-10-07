@@ -30,12 +30,53 @@ For each of the following cases, show how deletion of the Engineering department
 ON DELETE CASCADE
 ------------------
 
+  DID DNAME               BUDGET  MANAGER
+----- --------------- ---------- --------
+    1 Sales               500000        2
+    3 Service             200000        4
+
+  EID   DID  PCT_TIME
+----- ----- ---------
+    2     1      1.00
+    3     1      0.50
+    3     3      0.50
+    4     3      0.50
 
 ------------------
 DELETE SET NULL
 ------------------
 
+  DID DNAME               BUDGET  MANAGER
+----- --------------- ---------- --------
+    1 Sales               500000        2
+    3 Service             200000        4
+
+  EID   DID  PCT_TIME
+----- ----- ---------
+    1  NULL      1.00
+    2     1      1.00
+    3     1      0.50
+    3     3      0.50
+    4  NULL      0.50
+    4     3      0.50
+    5  NULL      0.75
+
 
 ------------------
 DELETE SET DEFAULT (default is did=1)
 ------------------
+
+  DID DNAME               BUDGET  MANAGER
+----- --------------- ---------- --------
+    1 Sales               500000        2
+    3 Service             200000        4
+
+  EID   DID  PCT_TIME
+----- ----- ---------
+    1     1      1.00
+    2     1      1.00
+    3     1      0.50
+    3     3      0.50
+    4     1      0.50
+    4     3      0.50
+    5     1      0.75

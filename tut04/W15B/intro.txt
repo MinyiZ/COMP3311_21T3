@@ -13,7 +13,7 @@ Assignment 1 Tips
 
 - use helper views to simplify queries
 - DROP VIEW usually helps with any create view errors
-- GROUP BY id, name if you want the name in the select statement
+- GROUP BY id, name if you want name in the select statement
 - string_agg() is great
     - https://www.postgresqltutorial.com/postgresql-aggregate-functions/postgresql-string_agg-function/
 - return next is also great
@@ -24,5 +24,6 @@ Today
 ------
 SQL update statements
 SQL constraints
+SQL delete semantics
 SQL queries
 PLpgSQL functions
