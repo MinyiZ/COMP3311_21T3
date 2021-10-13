@@ -1,0 +1,23 @@
+
+COMP3311 W5 Tutorial
+===========================================================
+
+Notices
+-------
+
+- Ass1 due Friday 9pm
+
+Assignment 1
+------------------
+
+- there is a help session on right now until 4pm
+- check your submission on d.cse
+    - ass1.sql must load with no errors on a fresh db
+- DO NOT submit on d.cse
+    - run give on the regular cse server
+- make sure style is consistent
+
+Today
+------
+
+- PLpgSQL functions
