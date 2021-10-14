@@ -10,7 +10,6 @@ Notices
 Assignment 1
 ------------------
 
-- there is a help session on right now until 4pm
 - check your submission on d.cse
     - ass1.sql must load with no errors on a fresh db
 - DO NOT submit on d.cse
