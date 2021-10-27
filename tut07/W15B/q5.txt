@@ -1,0 +1,32 @@
+Q5a - insertion
+----------------
+
+BEFORE
+- check valid values of the tuple
+- modify the value
+- generate additional values
+	- eg. insertion timestamp
+
+AFTER
+- enforce additional database dependencies
+	- eg. modify other tables
+
+Q5b - update
+-------------
+
+BEFORE
+- same as insertion
+- generate additional values
+	- eg. modified timestamp
+
+AFTER
+- same as insertion
+
+Q5c - delete
+-------------
+
+BEFORE
+- check referential integrity constraints
+
+AFTER
+- same as insertion

@@ -1,0 +1,27 @@
+
+COMP3311 W7 Tutorial
+===========================================================
+
+Notices
+-------
+
+- Quiz due Friday 9pm
+
+Assignment 1
+--------------
+
+- still in auto-marking process
+- will be hand-marked soon
+
+Assignment 2
+-------------
+
+- semi-released
+- will speak about it next week
+
+Today
+------
+
+- assertions
+- triggers
+- aggregates

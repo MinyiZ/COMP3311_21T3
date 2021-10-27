@@ -1,0 +1,9 @@
+a. update S set y = y + 1 where x = 5;
+
+updateS1 triggered 1 time
+updateS2 triggered 1 time
+
+b. update S set y = y + 1 where x > 5;
+
+updateS1 triggered 4 time
+updateS2 triggered 1 time

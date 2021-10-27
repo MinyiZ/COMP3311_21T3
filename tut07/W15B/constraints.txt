@@ -1,0 +1,21 @@
+========
+CHECK
+========
+
+- constraint on a table
+- checked on insertion into the table
+
+==========
+ASSERTION
+==========
+
+- constraint on a db often involving multiple tables
+- checked on insertion to any of the relevant tables
+- expensive so generally not implemented by DBMS
+
+==========
+TRIGGER
+==========
+
+- executable code written by the programmer
+- executes every time a certain operation (insert/delete/update) occurs on a certain table

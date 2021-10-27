@@ -1,0 +1,28 @@
+
+built-in aggregates
+	- max, sum, count, avg
+
+CREATE AGGREGATE AggName(BaseType) (
+    stype     = ...,
+    initcond  = ...,
+    sfunc     = ...,
+    finalfunc = ...,
+);
+
+- stype: state
+	- like a struct containing intermediate values
+	- eg. max - int
+		  sum - int
+		  avg - (int, int) to keep track of sum and count
+
+- initcond: initial state
+	- optional, defaults to null
+	- eg. max - -inf
+	      sum - 0
+		  avg - (0, 0)
+- sfunc: function that takes in a state and the next value and computes the next state
+
+- finalfunc: function that transforms current state into final state
+	- optional
+	- eg. avg - (5,2) -> 5/2 = 2.5
+
