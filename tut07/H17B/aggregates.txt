@@ -1,0 +1,29 @@
+stype - StateType
+initcond - StateType
+sfunc - (StateType, Value) -> StateType		
+finalfunc - Statetype -> FinalType
+
+
+example: sum()
+---------------
+
+               1    2    3    4
+[1,2,3,4] -> 0 -> 1 -> 3 -> 6 -> 10
+
+stype - int
+initcond - 0
+sfunc - add function
+finalfunc - identity function
+
+
+example: avg()
+--------------
+                   1         2       3        4          finalfunc
+[1,2,3,4] -> (0,0) -> (1,1) -> (3,2) -> (6,3) -> (10,4)     ->          10/4
+
+         sum   n
+stype - (int, int)
+initcond - (0,0)
+sfunc - add to sum and increment n
+finalfunc - sum/n
+
