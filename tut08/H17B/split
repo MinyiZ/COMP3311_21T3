@@ -1,0 +1,7 @@
+#!/usr/bin/python3
+
+x = "COMP1511,COMP1521,COMP1531,COMP2511,COMP2521,{MATH1311;MATH1411}"
+subjects = x.split(",")
+
+for subject in subjects:
+	print(subject)

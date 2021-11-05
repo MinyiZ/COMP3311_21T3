@@ -1,0 +1,38 @@
+#!/usr/bin/python3
+import sys
+import psycopg2
+from helpers import studentExists
+
+if len(sys.argv) < 3:
+   print(f"Usage {sys.argv[0]} studentID term")
+   exit(1)
+
+studentID = sys.argv[1]
+term = sys.argv[2]
+
+conn = None
+try:
+   conn = psycopg2.connect("dbname=mymyunsw")
+   cur = conn.cursor()
+
+   if not studentExists(conn, studentID):
+      print("No such student")
+      exit(1)
+
+   query = "select subject, subjectName from student_info2 where id = %s and term = %s"
+   cur.execute(query, [studentID, term])
+
+   courses = cur.fetchall()
+   if len(courses) == 0:
+      print("No courses")
+      exit(0)
+
+   for course in courses:
+      subject, subjectName = course
+      print(f"{subject} {subjectName}")
+
+except psycopg2.Error as err:
+   print("database error: ", err)
+finally:
+   if conn :
+      conn.close()
