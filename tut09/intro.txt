@@ -1,0 +1,20 @@
+
+COMP3311 W8 Tutorial
+===========================================================
+
+Notices
+-------
+
+- Ass1
+    - sorry
+    - not with me for marking yet
+- Ass2 now due Monday 15th 9pm
+    - lots of clarifications from jas in online session Wk8 thurs
+    - also check the forum
+    - patch your database
+    - consistent style
+
+Today
+------
+
+relational design theory
