@@ -72,7 +72,7 @@ TeamColours(teamName, colour): no non-trivial fds
 
 1. candidate key: B
     
-    BCNF Normalisation
+    __BCNF Normalisation__
     
     reduced minimal cover = {C → AD, B → C}
     
@@ -87,8 +87,10 @@ TeamColours(teamName, colour): no non-trivial fds
     result
     
     CAD, BC
+
+    <br>
     
-    3NF Normalisation
+    __3NF Normalisation__
     
     minimal cover = {C → D, C → A, B → C}
     
@@ -106,7 +108,7 @@ TeamColours(teamName, colour): no non-trivial fds
     
 2. candidate key: BD
     
-    BCNF Normalisation
+    __BCNF Normalisation__
     
     reduced minimal cover = {B → C, D → A}
     
@@ -127,8 +129,10 @@ TeamColours(teamName, colour): no non-trivial fds
     result
     
     AD, BC, BD
+
+    <br>
     
-    3NF Normalisation
+    __3NF Normalisation__
     
     minimal cover = {B → C, D → A}
     
@@ -150,7 +154,7 @@ TeamColours(teamName, colour): no non-trivial fds
     
 3. candidate key: ABC, BCD
 
-   BCNF Normalisation
+   __BCNF Normalisation__
 
 reduced minimal cover = {ABC → D, D → A}
 
@@ -170,9 +174,11 @@ result
 
 ABC, AD, BCD
 
- 
+<br>
 
-3NF Normalisation
+__3NF Normalisation__
+
+❗❗❗I MADE A MISTAKE HERE. THIS IS NOT NEEDED BECAUSE IT WAS ALREADY 3NF
 
 minimal cover = {ABC → D, D → A}
 
@@ -190,11 +196,11 @@ ABCD, AD
 
 d. candidate key: A
 
-BCNF Normalisation
+__BCNF Normalisation__
 
     
 
-3NF Normalisation
+__3NF Normalisation__
 
 minimal cover = {A → B, BC → D, A → C}
 
@@ -212,4 +218,4 @@ ABC, BCD
 
 e. candidate key: AB, CD, BC, AD
 
-   BCNF Normalisation
+   __BCNF Normalisation__

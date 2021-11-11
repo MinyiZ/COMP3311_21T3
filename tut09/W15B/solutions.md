@@ -84,7 +84,7 @@ R(A,B,C,D)
 
 1. candidate key: B
     
-    BCNF
+    __BCNF__
     
     reduced minimal cover = {C → AD, B → C}
     
@@ -99,8 +99,10 @@ R(A,B,C,D)
     result
     
     CAD, BC
-    
-    3NF
+
+    <br>
+
+    __3NF__
     
     minimal cover = {C → D, C → A, B → C}
     
@@ -118,7 +120,7 @@ R(A,B,C,D)
     
 2. candidate key: BD
     
-    BCNF
+    __BCNF__
     
     reduced minimal cover = {B → C, D → A}
     
@@ -139,8 +141,10 @@ R(A,B,C,D)
     result
     
     BC, AD, BD
+
+    <br>
     
-    3NF
+    __3NF__
     
     minimal cover = {B → C, D → A}
     
@@ -161,6 +165,8 @@ R(A,B,C,D)
     BC, AD, BD
     
 3.  candidate key: ABC,BCD
+
+    __BCNF__
     
      ABCD
     
@@ -204,9 +210,7 @@ R(A,B,C,D)
     
 4.  candidate key: A
     
-     not BCNF: BC → D does not have key on LHS
-    
-     3NF
+     __3NF__
     
      minimal cover = {A → B, BC → D, A → C}
     
@@ -221,15 +225,3 @@ R(A,B,C,D)
      result
     
      ABC, BCD
-    
-5. candidate key: AB, AD, BC, CD
-    
-    not BCNF: if we choose key AB, C → A and D → B does not have key on LHS
-    
-    in 3NF for AB
-    
-6. candidate key: A
-    
-    in BCNF
-    
-    in 3NF
