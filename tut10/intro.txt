@@ -1,0 +1,17 @@
+
+COMP3311 W10 Tutorial
+===========================================================
+
+Notices
+-------
+
+- exam 30th Nov
+    - vote on webcms3 for the time
+- there is a practice exam with answers
+- fill out myExperience :D
+
+Today
+------
+
+relational algebra
+transactions
