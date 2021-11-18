@@ -1,0 +1,377 @@
+====
+Q2
+====
+
+relations
+
+S(A,B)
+
+| A   | B   |
+| --- | --- |
+| 1   | x   |
+| 2   | y   |
+
+T(A,C)
+
+| A   | C   |
+| --- | --- |
+| 1   | z   |
+
+
+U(A,C)
+
+| A   | C   |
+| --- | --- |
+| 1   | x   |
+
+theta join
+
+S join T on (S.A = T.A)
+
+| S.A | T.A | S.B | T.C |
+| --- | --- | --- | --- |
+| 1   | 1   | x   | z   |
+
+natural join
+
+S join T
+
+| A   | B   | C   |
+| --- | --- | --- |
+| 1   | x   | z   |
+
+S join U
+
+| A   | B   | C   |
+| --- | --- | --- |
+| 1   | x   | x   |
+
+====
+Q3 
+====
+
+a.
+
+| Speed |
+| ----- |
+| 1500  |
+| 1000  |
+| 700   |
+
+b.
+
+| Speed |
+| ----- |
+| 700   |
+| 1500  |
+| 1000  |
+| 1000  |
+| 700   |
+
+e. not different
+
+====
+Q4 
+====
+
+R(A,B,C)
+
+| A   | B   | C   |
+| --- | --- | --- |
+| a1  | b1  | c1  |
+| a1  | b2  | c2  |
+| a2  | b1  | c1  |
+
+S(B,C)
+	  
+| B   | C   |
+| --- | --- |
+| b1  | c1  |
+| b2  | c2  |
+
+
+-----------
+a. R Div S
+-----------
+
+| A   |
+| --- |
+| a1  |
+
+
+---------------------------
+b. R Div (Sel[B != b1](S))
+---------------------------
+
+Sel[B != b1](S)
+
+| B   | C   |
+| --- | --- |
+| b2  | c2  |
+
+R Div (Sel[B != b1](S))
+
+| A   |
+| --- |
+| a1  |
+
+
+---------------------------
+c. R Div (Sel[B != b2](S))
+---------------------------
+
+Sel[B != b2](S)
+
+| B   | C   |
+| --- | --- |
+| b1  | c1  |
+
+R Div (Sel[B != b2](S))
+
+| A   |
+| --- |
+| a1  |
+| a2  |
+
+
+------------------------------------------
+d. (R × S) - (Sel[R.C=S.C](R Join[B=B] S))
+------------------------------------------
+
+R × S
+
+| R.A | R.B | R.C | S.B | S.C |
+| --- | --- | --- | --- | --- |
+| a1  | b1  | c1  | b1  | c1  |
+| a1  | b1  | c1  | b2  | c2  |
+| a1  | b2  | c2  | b1  | c1  |
+| a1  | b2  | c2  | b2  | c2  |
+| a2  | b1  | c1  | b1  | c1  |
+| a2  | b1  | c1  | b2  | c2  |
+
+R Join[B=B] S
+
+| R.A | R.B | R.C | S.B | S.C |
+| --- | --- | --- | --- | --- |
+| a1  | b1  | c1  | b1  | c1  |
+| a1  | b2  | c2  | b2  | c2  |
+| a2  | b1  | c1  | b1  | c1  |
+
+Sel[R.C=S.C](R Join[B=B] S)
+
+| R.A | R.B | R.C | S.B | S.C |
+| --- | --- | --- | --- | --- |
+| a1  | b1  | c1  | b1  | c1  |
+| a1  | b2  | c2  | b2  | c2  |
+| a2  | b1  | c1  | b1  | c1  |
+
+(R × S) - (Sel[R.C=S.C](R Join[B=B] S))
+
+| R.A | R.B | R.C | S.B | S.C |
+| --- | --- | --- | --- | --- |
+| a1  | b1  | c1  | b2  | c2  |
+| a1  | b2  | c2  | b1  | c1  |
+| a2  | b1  | c1  | b2  | c2  |
+
+====
+Q7
+====
+
+Suppliers(sid, sname, address)
+Parts(pid, pname, colour)
+Catalog(supplier, part, cost)
+
+-----------------------------------------------------------------------------------------------------------------------------
+a. Find the names of suppliers who supply some red part.
+-----------------------------------------------------------------------------------------------------------------------------
+
+-- part ids of red parts
+tmp1(part) = Proj[pid](Sel[colour='red'](Parts))
+-- supplier ids of red parts
+tmp2(sid) = Proj[supplier](Catalog join tmp1)
+-- supplier names of red parts
+tmp3(sname) = Proj[sname](Supplier join tmp2)
+
+-----------------------------------------------------------------------------------------------------------------------------
+b. Find the sids of suppliers who supply some red or green part.
+-----------------------------------------------------------------------------------------------------------------------------
+
+-- part ids of red or green parts
+tmp1(part) = Proj[pid](Sel[colour='red' OR colour='green'](Parts))
+-- supplier ids of red or green parts
+tmp2(sid) = Proj[supplier](Catalog join tmp1)
+
+-----------------------------------------------------------------------------------------------------------------------------
+c. Find the sids of suppliers who supply some red part or whose address is 221 Packer Street.
+-----------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------
+d. Find the sids of suppliers who supply some red part and some green part.
+-----------------------------------------------------------------------------------------------------------------------------
+
+-- part ids of red parts
+tmp1(part) = Proj[pid](Sel[colour='red'](Parts))
+-- supplier ids of red parts
+tmp2(sid) = Proj[supplier](Catalog join tmp1)
+
+-- part ids of green parts
+tmp3(part) = Proj[pid](Sel[colour='green'](Parts))
+-- supplier ids of green parts
+tmp4(sid) = Proj[supplier](Catalog join tmp1)
+
+-- supplier ids of green and red parts
+tmp5(sid) = tmp2 Intersect tmp4
+
+-----------------------------------------------------------------------------------------------------------------------------
+e. Find the sids of suppliers who supply every part.
+-----------------------------------------------------------------------------------------------------------------------------
+
+| S   | P   |
+| --- | --- |
+| 1   | x   |
+| 2   | x   |
+| 1   | y   |
+
+| P   |
+| --- |
+| x   |
+| y   |
+
+-- all part ids
+tmp1(part) = Proj[pid](Parts)
+-- sids of suppliers of all parts
+tmp2(sid) = Proj[supplier](Catalog Div tmp1)
+
+-----------------------------------------------------------------------------------------------------------------------------
+f. Find the sids of suppliers who supply every red part.
+-----------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------
+g. Find the sids of suppliers who supply every red or green part.
+-----------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------
+h. Find the sids of suppliers who supply every red part or supply every green part.
+-----------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------
+i. Find the pids of parts that are supplied by at least two different suppliers.
+-----------------------------------------------------------------------------------------------------------------------------
+
+C1 = Catalog
+
+| supplier | part |
+| -------- | ---- |
+| 1        | x    |
+| 2        | x    |
+| 1        | y    |
+
+C2 = Catalog
+
+| supplier | part |
+| -------- | ---- |
+| 1        | x    |
+| 2        | x    |
+| 1        | y    |
+
+
+tmp1 = C1 Join[part] C2
+
+| C1.supplier | C1.part | C2.part | C2.supplier |
+| ----------- | ------- | ------- | ----------- |
+| 1           | x       | x       | 1           |
+| 1           | x       | x       | 2           |
+| 2           | x       | x       | 1           |
+| 2           | x       | x       | 2           |
+| 1           | y       | y       | 1           |
+
+tmp2 = Sel[C1.supplier != C2.supplier](tmp1)
+
+| C1.supplier | C1.part | C2.part | C2.supplier |
+| ----------- | ------- | ------- | ----------- |
+| 1           | x       | x       | 2           |
+| 2           | x       | x       | 1           |
+
+tmp3(pid) = Proj[C1.part](tmp2)
+
+| pid |
+| --- |
+| x   |
+
+-----------------------------------------------------------------------------------------------------------------------------
+j. Find pairs of sids such that the supplier with the first sid charges more for some part than the supplier with the second sid.
+-----------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------
+k. Find the pids of the most expensive part(s) supplied by suppliers named "Yosemite Sham".
+-----------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------
+l. Find the pids of parts supplied by every supplier at a price less than 200 dollars (if any supplier either does not supply the part or charges more than 200 dollars for it, the part should not be selected).
+-----------------------------------------------------------------------------------------------------------------------------
+
+====
+serial schedule
+====
+
+T1: R(X)           R(Y) W(X)      W(Y)
+T2:           R(X)           W(X)
+T3:      R(X)                          W(X)
+
+possibility: T1;T2;T3
+
+T1: R(X) R(Y) W(X) W(Y)
+T2:                     R(X) W(X)
+T3:                               R(X) W(X)
+
+possibility: T3;T2:T1;
+T1:                     R(X) R(Y) W(X) W(Y)
+T2:           R(X) W(X)
+T3: R(X) W(X)
+
+====
+Q11
+====
+
+T3 -> T1
+T2 -> T3
+
+serial schedule: T2 -> T3 -> T1
+
+====
+Q13
+====
+
+a. 
+
+T1:R(X) T2:R(X) T1:W(X) T2:W(X)
+
+T1: R(X)      W(X)
+T2:      R(X)      W(X)
+
+precedence graph:
+T1 -> T2
+T2 -> T1
+=> cycle so not conflict serializable
+
+T1:           R(X) W(X)
+T2: R(X) W(X)
+
+not view serializable
+
+d.
+
+T1:R(X) T1:R(Y) T1:W(X) T2:R(Y) T3:W(Y) T1:W(X) T2:R(Y)
+
+T1: R(X) R(Y) W(X)           W(X)
+T2:                R(Y)           R(Y)
+T3:                     W(Y)
+
+precedence graph:
+T2 -> T3
+T1 -> T3
+T3 -> T2
+=> cycle so not conflict serializable
+
+T1: R(X) R(Y) W(X) W(X)
+T2:                          R(Y) R(Y)
+T3:                     W(Y)
+
+not view serializable 
+first T2:R(Y) reads the initial version of Y
+second T2:R(Y) reads the version written to by T3
+there is no possible serial schedule for a equivalent read
